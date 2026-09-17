@@ -116,6 +116,67 @@ depend:
 	$(CMAKE_COMMAND) -S$(CMAKE_SOURCE_DIR) -B$(CMAKE_BINARY_DIR) --check-build-system CMakeFiles/Makefile.cmake 1
 .PHONY : depend
 
+#=============================================================================
+# Target rules for targets named Pong
+
+# Build rule for target.
+Pong: cmake_check_build_system
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 Pong
+.PHONY : Pong
+
+# fast build rule for target.
+Pong/fast:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Pong.dir/build.make CMakeFiles/Pong.dir/build
+.PHONY : Pong/fast
+
+src/Bat.o: src/Bat.cpp.o
+.PHONY : src/Bat.o
+
+# target to build an object file
+src/Bat.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Pong.dir/build.make CMakeFiles/Pong.dir/src/Bat.cpp.o
+.PHONY : src/Bat.cpp.o
+
+src/Bat.i: src/Bat.cpp.i
+.PHONY : src/Bat.i
+
+# target to preprocess a source file
+src/Bat.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Pong.dir/build.make CMakeFiles/Pong.dir/src/Bat.cpp.i
+.PHONY : src/Bat.cpp.i
+
+src/Bat.s: src/Bat.cpp.s
+.PHONY : src/Bat.s
+
+# target to generate assembly for a file
+src/Bat.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Pong.dir/build.make CMakeFiles/Pong.dir/src/Bat.cpp.s
+.PHONY : src/Bat.cpp.s
+
+src/main.o: src/main.cpp.o
+.PHONY : src/main.o
+
+# target to build an object file
+src/main.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Pong.dir/build.make CMakeFiles/Pong.dir/src/main.cpp.o
+.PHONY : src/main.cpp.o
+
+src/main.i: src/main.cpp.i
+.PHONY : src/main.i
+
+# target to preprocess a source file
+src/main.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Pong.dir/build.make CMakeFiles/Pong.dir/src/main.cpp.i
+.PHONY : src/main.cpp.i
+
+src/main.s: src/main.cpp.s
+.PHONY : src/main.s
+
+# target to generate assembly for a file
+src/main.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Pong.dir/build.make CMakeFiles/Pong.dir/src/main.cpp.s
+.PHONY : src/main.cpp.s
+
 # Help Target
 help:
 	@echo "The following are some of the valid targets for this Makefile:"
@@ -124,6 +185,13 @@ help:
 	@echo "... depend"
 	@echo "... edit_cache"
 	@echo "... rebuild_cache"
+	@echo "... Pong"
+	@echo "... src/Bat.o"
+	@echo "... src/Bat.i"
+	@echo "... src/Bat.s"
+	@echo "... src/main.o"
+	@echo "... src/main.i"
+	@echo "... src/main.s"
 .PHONY : help
 
 
