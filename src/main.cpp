@@ -1,5 +1,6 @@
 
 #include "Bat.hpp"
+#include "Ball.hpp"
 #include <sstream>
 #include <cstdlib>
 #include <SFML/Graphics.hpp>
@@ -19,6 +20,9 @@ int main() {
 
     // Create the bat at the bottom center of the screen
     Bat bat(screenWidth / 2, screenHeight - 20);
+
+    // Create a ball
+    Ball ball(screenWidth / 2, 0);
 
     // Create a text object called hud
     Text hud;
@@ -74,6 +78,7 @@ int main() {
         // Update the Delta Time
         Time dt = clock.restart();
         bat.update(dt);
+        ball.update(dt);
 
         // Update the hud text
         std::stringstream ss;
@@ -84,6 +89,7 @@ int main() {
         window.clear();
         window.draw(hud);
         window.draw(bat.getShape());
+        window.draw(ball.getShape());
         window.display();
     }
 

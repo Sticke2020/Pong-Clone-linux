@@ -34,3 +34,12 @@ void Ball::reboundBottom() {
     m_Position.x = 500;
     m_DirectionY = -m_DirectionY;
 }
+
+void Ball::update(Time dt) {
+    // Update the balls position
+    m_Position.y += m_DirectionY * m_Speed * dt.asSeconds();
+    m_Position.x += m_DirectionX * m_Speed * dt.asSeconds();
+
+    // Move the ball
+    m_Shape.setPosition(m_Position);
+}

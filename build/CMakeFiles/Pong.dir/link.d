@@ -4,6 +4,7 @@ Pong: \
   /usr/lib/gcc/x86_64-linux-gnu/14/crtbeginS.o \
   CMakeFiles/Pong.dir/src/main.cpp.o \
   CMakeFiles/Pong.dir/src/Bat.cpp.o \
+  CMakeFiles/Pong.dir/src/Ball.cpp.o \
   /usr/lib/x86_64-linux-gnu/libsfml-graphics.so.2.6.2 \
   /usr/lib/x86_64-linux-gnu/libsfml-window.so.2.6.2 \
   /usr/lib/x86_64-linux-gnu/libsfml-audio.so.2.6.2 \
@@ -64,6 +65,8 @@ Pong: \
 CMakeFiles/Pong.dir/src/main.cpp.o:
 
 CMakeFiles/Pong.dir/src/Bat.cpp.o:
+
+CMakeFiles/Pong.dir/src/Ball.cpp.o:
 
 /usr/lib/x86_64-linux-gnu/libsfml-graphics.so.2.6.2:
 
