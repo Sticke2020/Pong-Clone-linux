@@ -1,0 +1,19 @@
+# CMake build directories
+/build/
+/out/
+
+# VS Code specific
+/.vscode/
+!/.vscode/settings.json
+!/.vscode/tasks.json
+!/.vscode/launch.json
+
+# Compiled binaries and object files
+*.o
+*.obj
+*.exe
+*.out
+*.a
+*.lib
+*.so
+*.dll
