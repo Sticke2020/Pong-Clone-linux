@@ -60,14 +60,26 @@ int main() {
 
         // Handle the pressing and releasing of the arrow keys
         if (Keyboard::isKeyPressed(Keyboard::Left)) {
-            bat.moveLeft();
+            // Check if the bat has touched the left edge of screen
+            if (bat.getPosition().left < 0) {
+                bat.stopLeft();
+            }
+            else {
+                bat.moveLeft();
+            }
         }
         else {
             bat.stopLeft();
         }
 
         if (Keyboard::isKeyPressed(Keyboard::Right)) {
-            bat.moveRight();
+            // Check if the bat has touched the right edge of the screen
+            if (bat.getPosition().left + 50 > window.getSize().x) {
+                bat.stopRight();
+            }
+            else {
+                bat.moveRight();
+            }
         }
         else {
             bat.stopRight();
@@ -84,6 +96,46 @@ int main() {
         std::stringstream ss;
         ss << "Score:" << score << " Lives:" << lives;
         hud.setString(ss.str());
+
+        // Handle the ball hitting the bottom
+        if (ball.getPosition().top > window.getSize().y) {
+            // Reverse the ball direction
+            ball.reboundBottom();
+
+            // Remove a life
+            lives --;
+
+            // Remove a point from score since a point is added when the ball resets
+            score --;
+
+            // Check for zero lives
+            if (lives < 1) {
+                // Reset the score
+                score = 0;
+
+                // Reset the lives
+                lives = 3;
+            }
+        }
+
+        // Handle the ball hitting the top
+        if (ball.getPosition().top < 0) {
+            ball.reboundBatOrTop();
+
+            // Increase the player score
+            score ++;
+        }
+
+        // Handle the ball hitting the sides
+        if (ball.getPosition().left < 0 || ball.getPosition().left + ball.getPosition().width > window.getSize().x) {
+            ball.reboundSides();
+        }
+
+        // Has the ball hit the bat?
+        if (ball.getPosition().intersects(bat.getPosition())) {
+            // Hit detected so reverse the ball and score a point
+            ball.reboundBatOrTop();
+        }
 
         // Draw the bat, the ball and the hud
         window.clear();
