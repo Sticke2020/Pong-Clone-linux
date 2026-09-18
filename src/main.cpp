@@ -12,7 +12,7 @@ int main() {
     float screenHeight = vm.height;
 
     // Create and open a window for the game
-    RenderWindow window(vm, "Pong");
+    RenderWindow window(vm, "Pong", Style::Fullscreen);
 
     int score = 0;
     int lives = 3;
@@ -25,7 +25,7 @@ int main() {
 
     // A cool font
     Font font;
-    font.loadFromFile("assets/font/talina-demo/talina-demo.otf");
+    font.loadFromFile("assets/font/terminal-vision.regular.otf");
 
     // Set the font
     hud.setFont(font);
@@ -71,7 +71,20 @@ int main() {
 
         // Update the bat, the ball and the hud
 
+        // Update the Delta Time
+        Time dt = clock.restart();
+        bat.update(dt);
+
+        // Update the hud text
+        std::stringstream ss;
+        ss << "Score:" << score << " Lives:" << lives;
+        hud.setString(ss.str());
+
         // Draw the bat, the ball and the hud
+        window.clear();
+        window.draw(hud);
+        window.draw(bat.getShape());
+        window.display();
     }
 
     return 0;

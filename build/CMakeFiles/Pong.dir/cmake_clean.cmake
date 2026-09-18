@@ -1,5 +1,7 @@
 file(REMOVE_RECURSE
   "CMakeFiles/Pong.dir/link.d"
+  "CMakeFiles/Pong.dir/src/Ball.cpp.o"
+  "CMakeFiles/Pong.dir/src/Ball.cpp.o.d"
   "CMakeFiles/Pong.dir/src/Bat.cpp.o"
   "CMakeFiles/Pong.dir/src/Bat.cpp.o.d"
   "CMakeFiles/Pong.dir/src/main.cpp.o"

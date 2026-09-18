@@ -10,5 +10,11 @@
   "command": "/usr/bin/g++  -I/home/matt/linux/code/Pong/include -g -std=gnu++20 -o CMakeFiles/Pong.dir/src/Bat.cpp.o -c /home/matt/linux/code/Pong/src/Bat.cpp",
   "file": "/home/matt/linux/code/Pong/src/Bat.cpp",
   "output": "CMakeFiles/Pong.dir/src/Bat.cpp.o"
+},
+{
+  "directory": "/home/matt/linux/code/Pong/build",
+  "command": "/usr/bin/g++  -I/home/matt/linux/code/Pong/include -g -std=gnu++20 -o CMakeFiles/Pong.dir/src/Ball.cpp.o -c /home/matt/linux/code/Pong/src/Ball.cpp",
+  "file": "/home/matt/linux/code/Pong/src/Ball.cpp",
+  "output": "CMakeFiles/Pong.dir/src/Ball.cpp.o"
 }
 ]
