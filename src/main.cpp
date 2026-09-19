@@ -13,13 +13,13 @@ int main() {
     float screenHeight = vm.height;
 
     // Create and open a window for the game
-    RenderWindow window(vm, "Pong", Style::Fullscreen);
+    RenderWindow window(vm, "Pong", Style::Default);
 
     int score = 0;
     int lives = 3;
 
     // Create the bat at the bottom center of the screen
-    Bat bat(screenWidth / 2, screenHeight - 20);
+    Bat bat(screenWidth / 2, screenHeight - 40);
 
     // Create a ball
     Ball ball(screenWidth / 2, 0);
@@ -111,7 +111,7 @@ int main() {
             // Check for zero lives
             if (lives < 1) {
                 // Reset the score
-                score = 0;
+                score = -1;
 
                 // Reset the lives
                 lives = 3;
@@ -124,6 +124,9 @@ int main() {
 
             // Increase the player score
             score ++;
+
+            // Change the ball color
+            ball.changeColor();
         }
 
         // Handle the ball hitting the sides

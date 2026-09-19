@@ -1,12 +1,16 @@
 
 #include "Ball.hpp"
 
+enum class BallColor {WHITE, YELLOW, RED};
+
+BallColor ballColor = BallColor::WHITE;
+
 // This is the constructor function
 Ball::Ball(float startX, float startY) : m_Position(startX, startY) {
     m_Shape.setSize(sf::Vector2f(10, 10));
     m_Shape.setPosition(m_Position);
 
-    m_Shape.setFillColor(sf::Color::Yellow);
+    m_Shape.setFillColor(sf::Color::White);
 }
 
 FloatRect Ball::getPosition() {
@@ -42,4 +46,29 @@ void Ball::update(Time dt) {
 
     // Move the ball
     m_Shape.setPosition(m_Position);
+}
+
+void Ball::changeColor() {
+    // Change the color of the ball
+    switch (ballColor) {
+        case BallColor::WHITE:
+            m_Shape.setFillColor(sf::Color::Yellow);
+            ballColor = BallColor::YELLOW;
+            break;
+
+        case BallColor::YELLOW:
+            m_Shape.setFillColor(sf::Color::Red);
+            ballColor = BallColor::RED;
+            break;
+
+        case BallColor::RED:
+            m_Shape.setFillColor(sf::Color::White);
+            ballColor = BallColor::WHITE;
+            break;
+
+        default:
+            m_Shape.setFillColor(sf::Color::White);
+            ballColor = BallColor::WHITE;
+            break;
+    }
 }

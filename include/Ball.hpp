@@ -21,4 +21,5 @@ class Ball {
         void reboundBatOrTop();
         void reboundBottom();
         void update(Time dt);
+        void changeColor();
 }; 
