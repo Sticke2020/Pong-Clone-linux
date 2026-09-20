@@ -15,6 +15,7 @@ class Ball {
     public:
         Ball(float startX, float startY);
         FloatRect getPosition();
+        void setPosition(float startX, float startY);
         RectangleShape getShape();
         float getXVelocity();
         void reboundSides();

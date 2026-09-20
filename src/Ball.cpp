@@ -17,6 +17,10 @@ FloatRect Ball::getPosition() {
     return m_Shape.getGlobalBounds();
 }
 
+void Ball::setPosition(float startX, float startY) {
+    m_Shape.setPosition(startX, startY);
+}
+
 RectangleShape Ball::getShape() {
     return m_Shape;
 }

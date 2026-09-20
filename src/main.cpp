@@ -120,6 +120,10 @@ int main() {
 
         // Handle the ball hitting the top
         if (ball.getPosition().top < 0) {
+            // Force the ball out of the ceiling boundary to prevent this from looping and increasing score by more than 1
+            ball.setPosition(ball.getPosition().left, 0.0f);
+
+            // Reverse the ball direction when it hits the top boundary
             ball.reboundBatOrTop();
 
             // Increase the player score
